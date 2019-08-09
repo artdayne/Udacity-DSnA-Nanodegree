@@ -66,6 +66,8 @@ class LinkedList:
     
     def pop(self):
         """ Return the first node's value and remove it from the list. """
+        if self.head == None:
+            return None
         node = self.head
         item = node.value
         self.head = node.next
@@ -75,10 +77,8 @@ class LinkedList:
     def insert(self, value, pos):
         """ Insert value at pos position in the list. If pos is larger than the
             length of the list, append to the end of the list. """
-        
-        # TODO: Write function to insert here
-        
-        pass
+        if 
+
     
     def size(self):
         """ Return the size or length of the linked list. """
@@ -158,20 +158,20 @@ linked_list.remove(3)
 assert linked_list.to_list() == [2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
 linked_list.remove(3)
 assert linked_list.to_list() == [2, 1, 4], f"list contents: {linked_list.to_list()}"
-# print(linked_list.to_list())
 
 # Test pop
 value = linked_list.pop()
 assert value == 2, f"list contents: {linked_list.to_list()}"
 assert linked_list.head.value == 1, f"list contents: {linked_list.to_list()}"
+# print(linked_list.to_list())
 
-# # Test insert 
-# linked_list.insert(5, 0)
-# assert linked_list.to_list() == [5, 1, 4], f"list contents: {linked_list.to_list()}"
-# linked_list.insert(2, 1)
-# assert linked_list.to_list() == [5, 2, 1, 4], f"list contents: {linked_list.to_list()}"
-# linked_list.insert(3, 6)
-# assert linked_list.to_list() == [5, 2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
+# Test insert 
+linked_list.insert(5, 0)
+assert linked_list.to_list() == [5, 1, 4], f"list contents: {linked_list.to_list()}"
+linked_list.insert(2, 1)
+assert linked_list.to_list() == [5, 2, 1, 4], f"list contents: {linked_list.to_list()}"
+linked_list.insert(3, 6)
+assert linked_list.to_list() == [5, 2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
 
 # # Test size
 # assert linked_list.size() == 5, f"list contents: {linked_list.to_list()}"        
