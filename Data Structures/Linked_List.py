@@ -29,7 +29,35 @@ class LinkedList:
         """ Search the linked list for a node with the requested value and return the node. """
         
         # TODO: Write function to search here
-
+    
+    def remove(self, value):
+        """ Remove first occurrence of value. """
+        
+        # TODO: Write function to remove here
+        
+        pass
+    
+    def pop(self):
+        """ Return the first node's value and remove it from the list. """
+        
+        # TODO: Write function to pop here
+        
+        pass
+    
+    def insert(self, value, pos):
+        """ Insert value at pos position in the list. If pos is larger than the
+            length of the list, append to the end of the list. """
+        
+        # TODO: Write function to insert here
+        
+        pass
+    
+    def size(self):
+        """ Return the size or length of the linked list. """
+        
+        
+        # TODO: Write function to get size here
+        
     def to_list(self):
         
         if self.head is None:
