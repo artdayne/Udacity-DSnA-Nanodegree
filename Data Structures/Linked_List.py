@@ -66,11 +66,12 @@ class LinkedList:
     
     def pop(self):
         """ Return the first node's value and remove it from the list. """
+        node = self.head
+        item = node.value
+        self.head = node.next
+        node.next = self.head
+        return item
         
-        # TODO: Write function to pop here
-        
-        pass
-    
     def insert(self, value, pos):
         """ Insert value at pos position in the list. If pos is larger than the
             length of the list, append to the end of the list. """
@@ -159,10 +160,10 @@ linked_list.remove(3)
 assert linked_list.to_list() == [2, 1, 4], f"list contents: {linked_list.to_list()}"
 # print(linked_list.to_list())
 
-# # Test pop
-# value = linked_list.pop()
-# assert value == 2, f"list contents: {linked_list.to_list()}"
-# assert linked_list.head.value == 1, f"list contents: {linked_list.to_list()}"
+# Test pop
+value = linked_list.pop()
+assert value == 2, f"list contents: {linked_list.to_list()}"
+assert linked_list.head.value == 1, f"list contents: {linked_list.to_list()}"
 
 # # Test insert 
 # linked_list.insert(5, 0)
