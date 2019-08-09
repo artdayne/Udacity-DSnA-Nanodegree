@@ -3,6 +3,38 @@ class Node:
         self.value = value
         self.next = None
 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        
+    def append(self, value):
+        if self.head is None:
+            self.head = Node(value)
+            return
+        
+        # Move to the tail (the last node)
+        node = self.head
+        while node.next:
+            node = node.next
+        
+        node.next = Node(value)
+        return
+    
+    def to_list(self):
+        
+        if self.head is None:
+            return None
+        
+        python_list = []
+        
+        node = self.head
+        while node.next:
+            python_list.append(node.value)
+            node = node.next
+        python_list.append(node.value)
+
+        return python_list
+
 def print_linked_list(head):
     current_node = head
 
