@@ -9,8 +9,13 @@ class LinkedList:
 
     def prepend(self, value):
         """ Prepend a value to the beginning of the list. """
+        if self.head is None:
+            self.head = Node(value)
+            return
         
-        # TODO: Write function to prepend here
+        # Move to the head (the first node)
+        newHeadNode = Node(value)
+        newHeadNode.next = self.head
 
     def append(self, value):
         if self.head is None:
