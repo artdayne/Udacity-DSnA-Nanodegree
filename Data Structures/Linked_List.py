@@ -115,24 +115,6 @@ def create_linked_list(input_list):
             temp_node = temp_node.next
         return head
 
-
-### Old Test Code
-# def test_function(input_list, head):
-#     try:
-#         if len(input_list) == 0:
-#             if head is not None:
-#                 print("Fail")
-#                 return
-#         for value in input_list:
-#             if head.value != value:
-#                 print("Fail")
-#                 return
-#             else:
-#                 head = head.next
-#         print("Pass")
-#     except Exception as e:
-#         print("Fail: "  + e)
-        
 ## Test your implementation here
 
 # Test prepend
@@ -152,13 +134,14 @@ assert linked_list.to_list() == [1], f"list contents: {linked_list.to_list()}"
 linked_list.append(3)
 assert linked_list.to_list() == [1, 3], f"list contents: {linked_list.to_list()}"
 
-# # Test search
-# linked_list.prepend(2)
-# linked_list.prepend(1)
-# linked_list.append(4)
-# linked_list.append(3)
-# assert linked_list.search(1).value == 1, f"list contents: {linked_list.to_list()}"
-# assert linked_list.search(4).value == 4, f"list contents: {linked_list.to_list()}"
+# Test search
+linked_list.prepend(2)
+linked_list.prepend(1)
+linked_list.append(4)
+linked_list.append(3)
+# print(linked_list.to_list())
+assert linked_list.search(1).value == 1, f"list contents: {linked_list.to_list()}"
+assert linked_list.search(4).value == 4, f"list contents: {linked_list.to_list()}"
 
 # # Test remove
 # linked_list.remove(1)
