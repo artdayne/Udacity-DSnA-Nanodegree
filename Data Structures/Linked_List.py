@@ -44,8 +44,17 @@ class LinkedList:
 
     def search(self, value):
         """ Search the linked list for a node with the requested value and return the node. """
+        if self.head is None:
+            return None
         
-        # TODO: Write function to search here
+        node = self.head
+        
+        while node:
+            if node.value == value:
+                return node
+            node = node.next
+        
+        return node
     
     def remove(self, value):
         """ Remove first occurrence of value. """
@@ -123,8 +132,6 @@ linked_list.prepend(1)
 assert linked_list.to_list() == [1], f"list contents: {linked_list.to_list()}"
 linked_list.append(3)
 linked_list.prepend(2)
-# linked_list.prepend(7)
-# print(linked_list.to_list())
 assert linked_list.to_list() == [2, 1, 3], f"list contents: {linked_list.to_list()}"
     
 # Test append
@@ -139,7 +146,6 @@ linked_list.prepend(2)
 linked_list.prepend(1)
 linked_list.append(4)
 linked_list.append(3)
-# print(linked_list.to_list())
 assert linked_list.search(1).value == 1, f"list contents: {linked_list.to_list()}"
 assert linked_list.search(4).value == 4, f"list contents: {linked_list.to_list()}"
 
