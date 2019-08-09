@@ -1,0 +1,9 @@
+Task0.py -- this is O(1), since it takes constant time, no matter what size list is provided. I am showing answer based on hard-coded position vectors for the list.
+
+Task1.py -- this is O(n + n) = O(2n) or O(n) if we want to simplify. I iterate through the whole list of SMS and Calls, so even if each number is unique, it does n times for first list and n times for second list. They don't multiply, i.e. for each number in calls, I don't run the whole text list. So it is not O(n^2)
+
+Task2.py -- O(n). So O(n) for the first loop, to find all the phone numbers and total time spent on the phone. But now I have also added the code to find max duration (in seconds) inside the same loop, so that's O(n). Finally, a second O(n) for looping through entire dictionary to compare if another key has value matching maxDuration. So O(n) overall.
+
+Task3.py -- this is O(nlog(n)) because the first iteration depends on number of items passed via calls list -- so that is O(n), and since I am using prefixes as a set, based on comments in the Review #2, I can do away with 'is this code in prefix', and simply 'add' values to a set, which should be O(1). At the end I sort it using inbuilt python function, which is nlog(n). Reasoning here is, that what if all numbers are non tele-marketers, so either they have a (xxxx) or xxxx ... which is 9999 * 9999 combinations possible. Thus making worst case of sorting as n*log(n). So since n*log(n) > n, above is my answer.
+
+Task4.py -- O(n*logn). This is O(3n) for the first part. Earlier it was O(4n) since I was running calls list twice, and texts list twice - now I only do it twice for calls, and once for texts, so really, O(n). At the end I used the 'sort' function which returns a list (since sets are unordered), and that's O(nlogn). So overall, this is O(n*logn)
