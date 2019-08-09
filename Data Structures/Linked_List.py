@@ -145,12 +145,12 @@ linked_list.prepend(2)
 # print(linked_list.to_list())
 assert linked_list.to_list() == [2, 1, 3], f"list contents: {linked_list.to_list()}"
     
-# # Test append
-# linked_list = LinkedList()
-# linked_list.append(1)
-# assert linked_list.to_list() == [1], f"list contents: {linked_list.to_list()}"
-# linked_list.append(3)
-# assert linked_list.to_list() == [1, 3], f"list contents: {linked_list.to_list()}"
+# Test append
+linked_list = LinkedList()
+linked_list.append(1)
+assert linked_list.to_list() == [1], f"list contents: {linked_list.to_list()}"
+linked_list.append(3)
+assert linked_list.to_list() == [1, 3], f"list contents: {linked_list.to_list()}"
 
 # # Test search
 # linked_list.prepend(2)
