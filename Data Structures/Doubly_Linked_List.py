@@ -10,8 +10,15 @@ class DoublyLinkedList:
         self.tail = None
     
     def append(self, value):
+        if self.head == None:
+            self.head = DoubleNode(value)
+            self.tail = self.head
+            return
         
-        # TODO: Implement this method to append to the tail of the list
+        self.tail.next = DoubleNode(value)
+        self.tail.next.previous = self.tail
+        self.tail = self.tail.next
+        return
 
 # Test your class here
 
