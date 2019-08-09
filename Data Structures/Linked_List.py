@@ -92,16 +92,3 @@ test_function(input_list, head)
 input_list = []
 head = create_linked_list(input_list)
 test_function(input_list, head)
-
-# current_node = Node(0)
-# head = current_node
-
-# print_linked_list(current_node)
-
-# head = Node(2)
-# head.next = Node(1)
-# head.next.next = Node(4)
-# head.next.next.next = Node(3)
-# head.next.next.next.next = Node(5)
-
-# print_linked_list(head)
