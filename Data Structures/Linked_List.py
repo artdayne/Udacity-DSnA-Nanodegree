@@ -6,7 +6,12 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
+
+    def prepend(self, value):
+        """ Prepend a value to the beginning of the list. """
         
+        # TODO: Write function to prepend here
+
     def append(self, value):
         if self.head is None:
             self.head = Node(value)
