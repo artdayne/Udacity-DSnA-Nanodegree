@@ -24,7 +24,12 @@ class LinkedList:
         
         node.next = Node(value)
         return
-    
+
+    def search(self, value):
+        """ Search the linked list for a node with the requested value and return the node. """
+        
+        # TODO: Write function to search here
+
     def to_list(self):
         
         if self.head is None:
