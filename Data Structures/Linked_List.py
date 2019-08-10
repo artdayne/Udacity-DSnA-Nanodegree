@@ -140,6 +140,17 @@ def create_linked_list(input_list):
             temp_node = temp_node.next
         return head
 
+def reverse(linked_list):
+    """
+    Reverse the inputted linked list
+
+    Args:
+       linked_list(obj): Linked List to be reversed
+    Returns:
+       obj: Reveresed Linked List
+    """
+    
+    
 ## Test your implementation here
 
 # Test prepend
