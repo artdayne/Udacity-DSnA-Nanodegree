@@ -79,13 +79,30 @@ class LinkedList:
             length of the list, append to the end of the list. """
         if self.head == None or pos == 0:
             self.prepend(value)
-
+            return
+        elif pos > self.size():
+            self.append(value)
+            return
+        counter = 0
+        node = self.head
+        while (counter + 1) < pos:
+            node = node.next
+            counter += 1
+        new_node = Node(value)
+        new_node.next = node.next
+        node.next = new_node
+        return
     
     def size(self):
         """ Return the size or length of the linked list. """
-        
-        
-        # TODO: Write function to get size here
+        if self.head is None:
+            return 0
+        node = self.head
+        counter = 0
+        while node.next:
+            counter += 1
+            node = node.next
+        return counter+1
 
     def to_list(self):
         if self.head is None:
@@ -169,10 +186,12 @@ assert linked_list.head.value == 1, f"list contents: {linked_list.to_list()}"
 linked_list.insert(5, 0)
 assert linked_list.to_list() == [5, 1, 4], f"list contents: {linked_list.to_list()}"
 print(linked_list.to_list())
-# linked_list.insert(2, 1)
-# assert linked_list.to_list() == [5, 2, 1, 4], f"list contents: {linked_list.to_list()}"
-# linked_list.insert(3, 6)
-# assert linked_list.to_list() == [5, 2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
+linked_list.insert(2, 1)
+print(linked_list.to_list())
+assert linked_list.to_list() == [5, 2, 1, 4], f"list contents: {linked_list.to_list()}"
+linked_list.insert(3, 6)
+print(linked_list.to_list())
+assert linked_list.to_list() == [5, 2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
 
 # # Test size
 # assert linked_list.size() == 5, f"list contents: {linked_list.to_list()}"        
