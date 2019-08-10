@@ -107,15 +107,11 @@ class LinkedList:
     def to_list(self):
         if self.head is None:
             return None
-        
         python_list = []
-        
         node = self.head
-        while node.next:
+        while node:
             python_list.append(node.value)
             node = node.next
-        python_list.append(node.value)
-
         return python_list
 
 def print_linked_list(head):
