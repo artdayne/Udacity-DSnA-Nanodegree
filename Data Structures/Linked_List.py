@@ -185,16 +185,14 @@ assert linked_list.head.value == 1, f"list contents: {linked_list.to_list()}"
 # Test insert 
 linked_list.insert(5, 0)
 assert linked_list.to_list() == [5, 1, 4], f"list contents: {linked_list.to_list()}"
-print(linked_list.to_list())
 linked_list.insert(2, 1)
-print(linked_list.to_list())
 assert linked_list.to_list() == [5, 2, 1, 4], f"list contents: {linked_list.to_list()}"
 linked_list.insert(3, 6)
-print(linked_list.to_list())
 assert linked_list.to_list() == [5, 2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
 
-# # Test size
-# assert linked_list.size() == 5, f"list contents: {linked_list.to_list()}"        
+# Test size
+assert linked_list.size() == 5, f"list contents: {linked_list.to_list()}"        
+print(linked_list.to_list())
 
 # input_list = [1, 2, 3, 4, 5, 6]
 # head = create_linked_list(input_list)
