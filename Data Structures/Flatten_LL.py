@@ -33,3 +33,15 @@ class NestedLinkedList(LinkedList):
     def flatten(self):
         # TODO: Implement this method to flatten the linked list in ascending sorted order.
         pass
+
+# First Test scenario
+linked_list = LinkedList(Node(1))
+linked_list.append(Node(3))
+linked_list.append(Node(5))
+
+nested_linked_list = NestedLinkedList(Node(linked_list))
+
+second_linked_list = LinkedList(Node(2))
+second_linked_list.append(4)
+
+nested_linked_list.append(Node(second_linked_list))
