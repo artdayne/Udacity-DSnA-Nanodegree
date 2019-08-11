@@ -24,3 +24,12 @@ class LinkedList:
         while node.next is not None:
             node = node.next
         node.next = Node(value)
+
+def merge(list1, list2):
+    # TODO: Implement this function so that it merges the two linked lists in a single, sorted linked list.
+    pass
+
+class NestedLinkedList(LinkedList):
+    def flatten(self):
+        # TODO: Implement this method to flatten the linked list in ascending sorted order.
+        pass
