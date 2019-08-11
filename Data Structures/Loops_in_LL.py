@@ -56,4 +56,12 @@ def iscircular(linked_list):
     
     # TODO: Write function to check if linked list is circular
     
-    pass
+# Test Cases
+
+small_loop = LinkedList([0])
+small_loop.head.next = small_loop.head
+print ("Pass" if iscircular(list_with_loop) else "Fail")
+print ("Pass" if not iscircular(LinkedList([-4, 7, 2, 5, -1])) else "Fail")
+print ("Pass" if not iscircular(LinkedList([1])) else "Fail")
+print ("Pass" if iscircular(small_loop) else "Fail")
+print ("Pass" if not iscircular(LinkedList([])) else "Fail")
