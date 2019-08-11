@@ -56,7 +56,7 @@ def iscircular(linked_list):
     slow_runner = linked_list.head
     fast_runner = linked_list.head
 
-    while slow_runner.next != None and fast_runner.next.next != None:
+    while slow_runner != None and fast_runner.next != None:
         slow_runner = slow_runner.next
         fast_runner = fast_runner.next.next
         if slow_runner == fast_runner:
