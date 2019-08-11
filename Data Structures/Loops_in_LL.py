@@ -37,12 +37,12 @@ class LinkedList:
 list_with_loop = LinkedList([2, -1, 3, 0, 5])
 
 # Creating a loop where the last node points back to the second node
-loop_start = list_with_loop.head.next
+loop_start = list_with_loop.head.next   # Pointer to 2nd item in the list
 
-node = list_with_loop.head
-while node.next: 
+node = list_with_loop.head              # Starting with 'head' of the list
+while node.next:                        # Looping till you reach last element in the list
     node = node.next   
-node.next = loop_start
+node.next = loop_start                  # Point the last element to the 2nd item
 
 def iscircular(linked_list):
     """
