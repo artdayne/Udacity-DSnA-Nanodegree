@@ -1,0 +1,26 @@
+############ Flattening a nested linked list ############
+# Suppose you have a linked list where the value of each node is a sorted linked list 
+# (i.e., it is a nested list). Your task is to flatten this nested list—that is, to 
+# combine all nested lists into a single (sorted) linked list.
+
+# Use this class as the nodes in your linked list
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+    
+    def __repr__(self):
+        return str(self.value)
+    
+class LinkedList:
+    def __init__(self, head):
+        self.head = head
+        
+    def append(self, value):
+        if self.head is None:
+            self.head = Node(value)
+            return
+        node = self.head
+        while node.next is not None:
+            node = node.next
+        node.next = Node(value)
