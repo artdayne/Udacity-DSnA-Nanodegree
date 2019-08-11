@@ -43,3 +43,17 @@ node = list_with_loop.head
 while node.next: 
     node = node.next   
 node.next = loop_start
+
+def iscircular(linked_list):
+    """
+    Determine whether the Linked List is circular or not
+
+    Args:
+       linked_list(obj): Linked List to be checked
+    Returns:
+       bool: Return True if the linked list is circular, return False otherwise
+    """
+    
+    # TODO: Write function to check if linked list is circular
+    
+    pass
