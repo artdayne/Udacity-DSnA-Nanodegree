@@ -11,6 +11,9 @@ def add_one(arr):
             return arr
         else:
             arr[arrLen-counter-1] = 0
+            if arrLen - counter - 1 == 0:
+                arr.insert(0,1)
+                return arr
         counter += 1
 
     pass
