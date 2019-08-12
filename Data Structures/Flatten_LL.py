@@ -4,6 +4,7 @@
 # combine all nested lists into a single (sorted) linked list.
 
 # Use this class as the nodes in your linked list
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -42,22 +43,27 @@ def merge(list1, list2):
     list1_elt = list1.head
     list2_elt = list2.head
     while list1_elt is not None or list2_elt is not None:
+        val1 = int(str(list1_elt.value))
+        val2 = int(str(list2_elt.value))
+        condition = val1 < val2
         # print("List1 value: {} and List2 value: {}".format(list1_elt.value, list2_elt.value))
         if list1_elt is None:
             # print("List2 value: {}".format(list2_elt.value))
-            merged.append(list2_elt.value)
+            merged.append(list2_elt)
             list2_elt = list2_elt.next
         elif list2_elt is None:
             # print("List1 value: {}".format(list1_elt.value))
-            merged.append(list1_elt.value)
+            merged.append(list1_elt)
             list1_elt = list1_elt.next
-        elif list1_elt.value <= list2_elt.value:
+        # elif list1_elt <= list2_elt:
+        # elif val1 <= val2:
+        elif condition:
             # print("List1 value: {}".format(list1_elt.value))
-            merged.append(list1_elt.value)
+            merged.append(list1_elt)
             list1_elt = list1_elt.next
         else:
             # print("List2 value: {}".format(list2_elt.value))
-            merged.append(list2_elt.value)
+            merged.append(list2_elt)
             list2_elt = list2_elt.next
     return merged
 
