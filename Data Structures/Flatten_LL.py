@@ -43,9 +43,9 @@ def merge(list1, list2):
     list1_elt = list1.head
     list2_elt = list2.head
     while list1_elt is not None or list2_elt is not None:
-        val1 = int(str(list1_elt.value))
-        val2 = int(str(list2_elt.value))
-        condition = val1 < val2
+        # val1 = int(str(list1_elt.value))
+        # val2 = int(str(list2_elt.value))
+        # condition = val1 < val2
         # print("List1 value: {} and List2 value: {}".format(list1_elt.value, list2_elt.value))
         if list1_elt is None:
             # print("List2 value: {}".format(list2_elt.value))
@@ -55,9 +55,9 @@ def merge(list1, list2):
             # print("List1 value: {}".format(list1_elt.value))
             merged.append(list1_elt)
             list1_elt = list1_elt.next
-        # elif list1_elt <= list2_elt:
+        elif list1_elt.value <= list2_elt.value:
         # elif val1 <= val2:
-        elif condition:
+        # elif condition:
             # print("List1 value: {}".format(list1_elt.value))
             merged.append(list1_elt)
             list1_elt = list1_elt.next
@@ -69,8 +69,12 @@ def merge(list1, list2):
 
 class NestedLinkedList(LinkedList):
     def flatten(self):
-        # TODO: Implement this method to flatten the linked list in ascending sorted order.
-        pass
+        return self._flatten(self.head)
+
+    def _flatten(self, node):
+        if node.next is None:
+            return merge(node.value, None)
+        return merge(node.value, self._flatten(node.next))
 
 # First Test scenario
 linked_list = LinkedList(Node(1))
