@@ -26,6 +26,14 @@ class LinkedList:
         node.next = Node(value)
 
 def merge(list1, list2):
+    """
+    Merge and sort two linked lists
+
+    Args:
+       list1, list2: two linked lists that need to be merged. They need to be pre-sorted before being passed as a argument.
+    Returns:
+       linked-list: Merged and sorted linked-list, a combination of list1 and list2
+    """
     # TODO: Implement this function so that it merges the two linked lists in a single, sorted linked list.
     pass
 
