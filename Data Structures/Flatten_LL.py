@@ -42,17 +42,22 @@ def merge(list1, list2):
     list1_elt = list1.head
     list2_elt = list2.head
     while list1_elt is not None or list2_elt is not None:
+        # print("List1 value: {} and List2 value: {}".format(list1_elt.value, list2_elt.value))
         if list1_elt is None:
-            merged.append(list2_elt)
+            # print("List2 value: {}".format(list2_elt.value))
+            merged.append(list2_elt.value)
             list2_elt = list2_elt.next
         elif list2_elt is None:
-            merged.append(list1_elt)
+            # print("List1 value: {}".format(list1_elt.value))
+            merged.append(list1_elt.value)
             list1_elt = list1_elt.next
         elif list1_elt.value <= list2_elt.value:
-            merged.append(list1_elt)
+            # print("List1 value: {}".format(list1_elt.value))
+            merged.append(list1_elt.value)
             list1_elt = list1_elt.next
         else:
-            merged.append(list2_elt)
+            # print("List2 value: {}".format(list2_elt.value))
+            merged.append(list2_elt.value)
             list2_elt = list2_elt.next
     return merged
 
