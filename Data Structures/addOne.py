@@ -3,6 +3,14 @@ def add_one(arr):
     :param: arr - list of digits representing some number x
     return a list with digits represengint (x + 1)
     """
+    counter = 0
+    arrLen = len(arr)
+    while counter < arrLen:
+        if arr[arrLen-counter-1] < 9:
+            arr[arrLen-counter-1] += 1
+            return arr
+        counter += 1
+
     pass
 
 def test_function(test_case):
@@ -26,7 +34,7 @@ solution = [1, 2, 4]
 test_case = [arr, solution]
 test_function(test_case)
 
-arr = [9, 9, 9]
-solution = [1, 0, 0, 0]
-test_case = [arr, solution]
-test_function(test_case)
+# arr = [9, 9, 9]
+# solution = [1, 0, 0, 0]
+# test_case = [arr, solution]
+# test_function(test_case)
