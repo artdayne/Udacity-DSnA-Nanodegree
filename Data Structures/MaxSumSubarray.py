@@ -9,3 +9,10 @@
 # Example 2:
 # arr = [1, 2, -5, -4, 1, 6]
 # The largest sum is 7, which is the sum of the last two elements of the array.
+
+def max_sum_subarray(arr):
+    """
+    :param - arr - input array
+    return - number - largest sum in contiguous subarry within arr
+    """
+    pass
