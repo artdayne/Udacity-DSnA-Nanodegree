@@ -66,9 +66,23 @@ linked_list = LinkedList(Node(1))
 linked_list.append(Node(3))
 linked_list.append(Node(5))
 
-nested_linked_list = NestedLinkedList(Node(linked_list))
+# nested_linked_list = NestedLinkedList(Node(linked_list))
 
 second_linked_list = LinkedList(Node(2))
 second_linked_list.append(4)
 
-nested_linked_list.append(Node(second_linked_list))
+merged = merge(linked_list, second_linked_list)
+node = merged.head
+while node is not None:
+    #This will print 1 2 3 4 5
+    print(node.value)
+    node = node.next
+    
+# Lets make sure it works with a None list
+merged = merge(None, linked_list)
+node = merged.head
+while node is not None:
+    #This will print 1 2 3 4 5
+    print(node.value)
+    node = node.next
+# nested_linked_list.append(Node(second_linked_list))
