@@ -9,6 +9,8 @@ def add_one(arr):
         if arr[arrLen-counter-1] < 9:
             arr[arrLen-counter-1] += 1
             return arr
+        else:
+            arr[arrLen-counter-1] = 0
         counter += 1
 
     pass
@@ -29,8 +31,8 @@ solution = [1]
 test_case = [arr, solution]
 test_function(test_case)
 
-arr = [1, 2, 3]
-solution = [1, 2, 4]
+arr = [1, 2, 9]
+solution = [1, 3, 0]
 test_case = [arr, solution]
 test_function(test_case)
 
