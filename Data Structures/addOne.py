@@ -39,7 +39,7 @@ solution = [1, 3, 0]
 test_case = [arr, solution]
 test_function(test_case)
 
-# arr = [9, 9, 9]
-# solution = [1, 0, 0, 0]
-# test_case = [arr, solution]
-# test_function(test_case)
+arr = [9, 9, 9]
+solution = [1, 0, 0, 0]
+test_case = [arr, solution]
+test_function(test_case)
