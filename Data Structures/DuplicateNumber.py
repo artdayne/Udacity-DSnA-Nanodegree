@@ -42,15 +42,15 @@ test_function(test_case)
 
 arr = [0, 1, 5, 5, 3, 2, 4]
 solution = 5
-print(arr)
+# print(arr)
 
 test_case = [arr, solution]
 test_function(test_case)
 
-arr = list(range(1000))
-print(len(arr))
+arr = list(range(1000000000))
+# print(len(arr))
 arr.insert(823, 23)
-print(len(arr))
-solution = 823
+# print(len(arr))
+solution = 23
 test_case = [arr, solution]
 test_function(test_case)
