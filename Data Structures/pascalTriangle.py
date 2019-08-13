@@ -56,3 +56,4 @@ def test_function(test_case):
 # test_case = [n, solution]
 # test_function(test_case)
 
+nth_row_pascal(11)
