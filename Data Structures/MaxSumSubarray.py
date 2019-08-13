@@ -17,7 +17,6 @@ def max_sum_subarray(arr):
     """
     sumArray = sum(arr)
     maxSum = sumArray
-    print("Before it all beings | Array is {} sumArr is {} and maxSum is {}".format(arr, sum(arr), maxSum))
     while len(arr) > 1:
         if arr[0] > arr[len(arr)-1]:
             arr = arr[:-1]
@@ -25,7 +24,6 @@ def max_sum_subarray(arr):
             arr = arr[1:]
         if sum(arr) > maxSum:
             maxSum = sum(arr)
-        print("Array is {} sumArr is {} and maxSum is {}".format(arr, sum(arr), maxSum))
     return maxSum
 
 def test_function(test_case):
@@ -52,8 +50,6 @@ test_function(test_case)
 
 arr = [-12, 15, -13, 14, -1, 2, 1, -5, 4]
 solution = 18  # sum of subarray = [15, -13, 14, -1, 2, 1]
-# print(arr[:-1])
-# print(arr[1:])
 
 test_case = [arr, solution]
 test_function(test_case)
