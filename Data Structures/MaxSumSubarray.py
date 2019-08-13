@@ -15,6 +15,9 @@ def max_sum_subarray(arr):
     :param - arr - input array
     return - number - largest sum in contiguous subarry within arr
     """
+    sum_array = sum(arr)
+    return sum_array
+
     pass
 
 def test_function(test_case):
@@ -41,6 +44,8 @@ test_function(test_case)
 
 arr = [-12, 15, -13, 14, -1, 2, 1, -5, 4]
 solution = 18  # sum of subarray = [15, -13, 14, -1, 2, 1]
+# print(arr[:-1])
+# print(arr[1:])
 
 test_case = [arr, solution]
 test_function(test_case)
