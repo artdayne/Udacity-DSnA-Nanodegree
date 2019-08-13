@@ -17,12 +17,13 @@ def max_sum_subarray(arr):
     """
     sumArray = sum(arr)
     maxSum = sumArray
+    print("Before it all beings | Array is {} sumArr is {} and maxSum is {}".format(arr, sum(arr), maxSum))
     while len(arr) > 1:
         if arr[0] > arr[len(arr)-1]:
             arr = arr[:-1]
         else:
             arr = arr[1:]
-        if sum(arr) > sumArray:
+        if sum(arr) > maxSum:
             maxSum = sum(arr)
         print("Array is {} sumArr is {} and maxSum is {}".format(arr, sum(arr), maxSum))
     return maxSum
