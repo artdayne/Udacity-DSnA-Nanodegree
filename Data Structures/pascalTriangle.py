@@ -2,12 +2,19 @@
 # For exmaple, if n = 4, then output = [1, 4, 6, 4, 1].
 # To know more about Pascal's triangle: https://www.mathsisfun.com/pascals-triangle.html
 
+import math
+
 def nth_row_pascal(n):
     """
     :param: - n - index (0 based)
     return - list() representing nth row of Pascal's triangle
     """
+    nth_row = list()
 
+    for num in range(n+1):
+        nth_row.append(math.factorial(n) / (math.factorial(num) * math.factorial(n - num)))
+    
+    return nth_row
 
 def test_function(test_case):
     n = test_case[0]
