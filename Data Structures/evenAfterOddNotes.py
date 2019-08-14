@@ -20,14 +20,24 @@ def even_after_odd(head):
     currentHead = head
     currentNode = head
     prevNode = head
+    curValue = 0
+    prevValue = 0
     
     print("BEFORE LOOP: Current Head Value: {}; Current Node Value: {}; Prev Node Value: {}".format(currentHead.data, currentNode.data, prevNode.data))
 
     while currentHead.next != None:
-        if currentNode.data % 2 == 1:
-            if currentNode == currentHead:
+        if currentNode.data % 2 == 1:                           # If Current Node value is odd
+            if currentNode == currentHead:                      # AND, if Current Node is the HEAD
                 currentNode = currentNode.next
                 currentHead = currentNode
+            else:                                               # If "odd" Current Node is not the HEAD
+                if prevNode.data % 2 == 1:                      # is previous node an odd one too? If yes, continue
+                    continue
+                else:                                           # else swap value with it, to move odd left, even right
+                    tempValue = prevNode.data
+                    prevNode.data = currentNode.data
+                    currentNode.data = tempValue
+                print(prevNode == head)
         break
     
     print("AFTER LOOP: Current Head Value: {}; Current Node Value: {}; Prev Node Value: {}".format(currentHead.data, currentNode.data, prevNode.data))
