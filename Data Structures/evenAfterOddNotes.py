@@ -17,7 +17,20 @@ def even_after_odd(head):
     :param - head - head of linked list
     return - updated list with all even elements are odd elements
     """
-    pass
+    currentHead = head
+    currentNode = head
+    prevNode = head
+    
+    print("BEFORE LOOP: Current Head Value: {}; Current Node Value: {}; Prev Node Value: {}".format(currentHead.data, currentNode.data, prevNode.data))
+
+    while currentHead.next != None:
+        if currentNode.data % 2 == 1:
+            if currentNode == currentHead:
+                currentNode = currentNode.next
+                currentHead = currentNode
+        break
+    
+    print("AFTER LOOP: Current Head Value: {}; Current Node Value: {}; Prev Node Value: {}".format(currentHead.data, currentNode.data, prevNode.data))
 
 # helper functions for testing purpose
 def create_linked_list(arr):
