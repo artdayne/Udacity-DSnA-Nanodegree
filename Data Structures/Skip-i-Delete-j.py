@@ -21,7 +21,48 @@ def skip_i_delete_j(head, i, j):
     :param: j - next `j` nodes that are to be deleted
     return - return the updated head of the linked list
     """
-    pass
+    newHead = Node(head.data)
+    tail = newHead
+    currentNode = head
+
+    while currentNode.next:
+        count = 0
+        for count in range(i):
+            if currentNode.next is not None:
+                currentNode = currentNode.next
+            else:
+                break
+            tail.next = Node(currentNode.data)
+            tail = tail.next
+            count += 1
+        count = 0
+        for count in range(j):
+            if currentNode.next is not None:
+                currentNode = currentNode.next
+            else:
+                break
+            count += 1
+    
+    return newHead
+    # currentNode = head
+    # retainHead = head
+    # retain = i
+    # delete = j
+
+    # while currentNode.next:
+        
+        # if retain > 0:
+        #     currentNode = currentNode.next
+        #     retain -= 1
+        #     # print_linked_list(retainHead)
+        # elif delete > 0:
+        #     currentNode.next = currentNode.next.next
+        #     delete -= 1
+        #     # print_linked_list(retainHead)
+        # else:
+        #     retain = i
+        #     delete = j
+    # return retainHead
 
 # helper functions for testing purpose
 def create_linked_list(arr):
@@ -47,6 +88,7 @@ def test_function(test_case):
     solution = test_case[3]
         
     temp = skip_i_delete_j(head, i, j)
+    print_linked_list(temp)
     index = 0
     try:
         while temp is not None:
@@ -66,6 +108,7 @@ head = create_linked_list(arr)
 solution = [1, 2, 5, 6, 9, 10]
 test_case = [head, i, j, solution]
 test_function(test_case)
+# print_linked_list(test_case)
 
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 i = 2
@@ -74,6 +117,7 @@ head = create_linked_list(arr)
 solution = [1, 2, 6, 7, 11, 12]
 test_case = [head, i, j, solution]
 test_function(test_case)
+# print_linked_list(test_case)
 
 arr = [1, 2, 3, 4, 5]
 i = 2
@@ -82,3 +126,4 @@ head = create_linked_list(arr)
 solution = [1, 2]
 test_case = [head, i, j, solution]
 test_function(test_case)
+# print_linked_list(test_case)
