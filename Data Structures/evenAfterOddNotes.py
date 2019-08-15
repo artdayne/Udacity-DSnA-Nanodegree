@@ -17,30 +17,65 @@ def even_after_odd(head):
     :param - head - head of linked list
     return - updated list with all even elements are odd elements
     """
-    currentHead = head
-    currentNode = head
-    prevNode = head
-    curValue = 0
-    prevValue = 0
+    # currentHead = head
+    # currentNode = head
+    # prevNode = head
+    # curValue = 0
+    # prevValue = 0
     
-    print("BEFORE LOOP: Current Head Value: {}; Current Node Value: {}; Prev Node Value: {}".format(currentHead.data, currentNode.data, prevNode.data))
+    # print("BEFORE LOOP: Current Head Value: {}; Current Node Value: {}; Prev Node Value: {}".format(currentHead.data, currentNode.data, prevNode.data))
 
-    while currentHead.next != None:
-        if currentNode.data % 2 == 1:                           # If Current Node value is odd
-            if currentNode == currentHead:                      # AND, if Current Node is the HEAD
-                currentNode = currentNode.next
-                currentHead = currentNode
-            else:                                               # If "odd" Current Node is not the HEAD
-                if prevNode.data % 2 == 1:                      # is previous node an odd one too? If yes, continue
-                    continue
-                else:                                           # else swap value with it, to move odd left, even right
-                    tempValue = prevNode.data
-                    prevNode.data = currentNode.data
-                    currentNode.data = tempValue
-                print(prevNode == head)
-        break
+    # while currentHead.next != None:
+    #     if currentNode.data % 2 == 1:                           # If Current Node value is odd
+    #         if currentNode == currentHead:                      # AND, if Current Node is the HEAD
+    #             currentNode = currentNode.next
+    #             currentHead = currentNode
+    #         else:                                               # If "odd" Current Node is not the HEAD
+    #             if prevNode.data % 2 == 1:                      # is previous node an odd one too? If yes, continue
+    #                 continue
+    #             else:                                           # else swap value with it, to move odd left, even right
+    #                 tempValue = prevNode.data
+    #                 prevNode.data = currentNode.data
+    #                 currentNode.data = tempValue
+    #             print(prevNode == head)
+    #     break
     
-    print("AFTER LOOP: Current Head Value: {}; Current Node Value: {}; Prev Node Value: {}".format(currentHead.data, currentNode.data, prevNode.data))
+    # print("AFTER LOOP: Current Head Value: {}; Current Node Value: {}; Prev Node Value: {}".format(currentHead.data, currentNode.data, prevNode.data))
+
+    # UDACITY Solution
+    
+    if head is None:
+        return head
+    
+    even = None
+    odd = None
+    even_tail = None
+    head_tail = None
+    
+    while head:
+        next_node = head.next
+        
+        if head.data % 2 == 0:
+            if even is None:
+                even = head
+                even_tail = even
+            else:
+                even_tail.next = head
+                even_tail = even_tail.next
+        else:
+            if odd is None:
+                odd = head
+                odd_tail = odd
+            else:
+                odd_tail.next = head
+                odd_tail = odd_tail.next
+        head.next = None
+        head = next_node
+    
+    if odd is None:
+        return even
+    odd_tail.next = even
+    return odd
 
 # helper functions for testing purpose
 def create_linked_list(arr):
