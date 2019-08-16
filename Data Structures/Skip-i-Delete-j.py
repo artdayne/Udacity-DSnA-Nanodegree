@@ -22,6 +22,7 @@ def skip_i_delete_j(head, i, j):
     return - return the updated head of the linked list
     """
     newHead = Node(head.data)
+    print_linked_list(newHead)
 
 # helper functions for testing purpose
 def create_linked_list(arr):
@@ -69,20 +70,20 @@ test_case = [head, i, j, solution]
 test_function(test_case)
 # print_linked_list(test_case)
 
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-i = 2
-j = 3
-head = create_linked_list(arr)
-solution = [1, 2, 6, 7, 11, 12]
-test_case = [head, i, j, solution]
-test_function(test_case)
-# print_linked_list(test_case)
+# arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+# i = 2
+# j = 3
+# head = create_linked_list(arr)
+# solution = [1, 2, 6, 7, 11, 12]
+# test_case = [head, i, j, solution]
+# test_function(test_case)
+# # print_linked_list(test_case)
 
-arr = [1, 2, 3, 4, 5]
-i = 2
-j = 4
-head = create_linked_list(arr)
-solution = [1, 2]
-test_case = [head, i, j, solution]
-test_function(test_case)
+# arr = [1, 2, 3, 4, 5]
+# i = 2
+# j = 4
+# head = create_linked_list(arr)
+# solution = [1, 2]
+# test_case = [head, i, j, solution]
+# test_function(test_case)
 # print_linked_list(test_case)
