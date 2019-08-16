@@ -26,27 +26,31 @@ def skip_i_delete_j(head, i, j):
     currentNode = head
     # newListNode.next = Node(currentNode.next.data)
     # print_linked_list(newHead)
-    retainCounter = i
-    deleteCounter = j
+    retainCounter = 0
+    deleteCounter = 0
     counter = 0
     
-    retainCounter -= 1
-    currentNode = currentNode.next
+    # retainCounter -= 1
+    # currentNode = currentNode.next
     print("BEFORE WHILE LOOP: Retain Counter: {}; Delete Counter: {}; Current Node: {}".format(retainCounter, deleteCounter, currentNode.data))
+    print("BEFORE WHILE LOOP: NEW LINKED LIST")
+    print_linked_list(newHead)
     while currentNode.next:
-        if retainCounter > 0:
-            newListNode.next = Node(currentNode.data)
-            newListNode = newListNode.next
-            retainCounter -= 1
-        elif deleteCounter > 0:
-            deleteCounter -= 1
-        else:
-            retainCounter = i
-            deleteCounter = j
+        
+        # if retainCounter > 0:
+        #     newListNode.next = Node(currentNode.data)
+        #     newListNode = newListNode.next
+        #     retainCounter -= 1
+        # elif deleteCounter > 0:
+        #     deleteCounter -= 1
+        # else:
+        #     retainCounter = i
+        #     deleteCounter = j
         currentNode = currentNode.next
         counter += 1
         print("Retain Counter: {}; Delete Counter: {}; Current Node: {}".format(retainCounter, deleteCounter, currentNode.data))
-        print("New Linked List: {}".format(print_linked_list(newHead)))
+        print("New Linked List:")
+        print_linked_list(newHead)
         if counter == 5:
             break
         
