@@ -22,47 +22,6 @@ def skip_i_delete_j(head, i, j):
     return - return the updated head of the linked list
     """
     newHead = Node(head.data)
-    tail = newHead
-    currentNode = head
-
-    while currentNode.next:
-        count = 0
-        for count in range(i):
-            if currentNode.next is not None:
-                currentNode = currentNode.next
-            else:
-                break
-            tail.next = Node(currentNode.data)
-            tail = tail.next
-            count += 1
-        count = 0
-        for count in range(j):
-            if currentNode.next is not None:
-                currentNode = currentNode.next
-            else:
-                break
-            count += 1
-    
-    return newHead
-    # currentNode = head
-    # retainHead = head
-    # retain = i
-    # delete = j
-
-    # while currentNode.next:
-        
-        # if retain > 0:
-        #     currentNode = currentNode.next
-        #     retain -= 1
-        #     # print_linked_list(retainHead)
-        # elif delete > 0:
-        #     currentNode.next = currentNode.next.next
-        #     delete -= 1
-        #     # print_linked_list(retainHead)
-        # else:
-        #     retain = i
-        #     delete = j
-    # return retainHead
 
 # helper functions for testing purpose
 def create_linked_list(arr):
