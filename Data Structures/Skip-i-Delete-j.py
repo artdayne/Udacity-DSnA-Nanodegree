@@ -27,31 +27,20 @@ def skip_i_delete_j(head, i, j):
 
     while currentNode.next:
         for iCounter in range(i, 0, -1):
-            # print("Inside iCounter, step #{}".format(iCounter))
             if currentNode.next == None:
-                print("Inside iCounter break")
                 return newHead
             prevNode = currentNode
             currentNode = currentNode.next
-        # if currentNode.next == None:
-        #     return newHead
-        # else:
-        #     currentNode = prevNode
-        print("After iCounter | Previous Node: {}; Current Node: {}".format(prevNode.data, currentNode.data))
 
         for jCounter in range(j, 0, -1):
-            # print("Inside jCounter, step #{}".format(jCounter))
             currentNode = prevNode
             if currentNode.next.next == None:
                 currentNode.next = None
-                print("Inside jCounter break")
                 return newHead
             currentNode.next = currentNode.next.next
+        
         currentNode = currentNode.next
-        print("After jCounter | Previous Node: {}; Current Node: {}".format(prevNode.data, currentNode.data))
-        # break
     
-    print("Outside the While Loop")
     return newHead
 
 # helper functions for testing purpose
