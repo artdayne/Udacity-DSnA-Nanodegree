@@ -21,6 +21,9 @@ def skip_i_delete_j(head, i, j):
     :param: j - next `j` nodes that are to be deleted
     return - return the updated head of the linked list
     """
+    if i == 0:
+        return None
+        
     newHead = head
     currentNode = head
     prevNode = head
