@@ -23,7 +23,10 @@ def skip_i_delete_j(head, i, j):
     """
     if i == 0:
         return None
-        
+
+    if head is None or j < 0 or i < 0:
+        return head
+
     newHead = head
     currentNode = head
     prevNode = head
