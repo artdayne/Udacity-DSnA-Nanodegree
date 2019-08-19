@@ -21,42 +21,38 @@ def skip_i_delete_j(head, i, j):
     :param: j - next `j` nodes that are to be deleted
     return - return the updated head of the linked list
     """
-    newHead = Node(head.data)
-    # newListNode = newHead
+    newHead = head
     currentNode = head
-    # newListNode.next = Node(currentNode.next.data)
-    # print_linked_list(newHead)
-    iCounter = 0
-    jCounter = 0
-    # counter = 0
-    
-    
+    prevNode = head
 
-    # retainCounter -= 1
-    # currentNode = currentNode.next
-    # print("BEFORE WHILE LOOP: Retain Counter: {}; Delete Counter: {}; Current Node: {}".format(iCounter, jCounter, currentNode.data))
-    # print("BEFORE WHILE LOOP: NEW LINKED LIST")
-    # print_linked_list(newHead)
-    # while currentNode.next:
-        
-    #     # if retainCounter > 0:
-    #     #     newListNode.next = Node(currentNode.data)
-    #     #     newListNode = newListNode.next
-    #     #     retainCounter -= 1
-    #     # elif deleteCounter > 0:
-    #     #     deleteCounter -= 1
-    #     # else:
-    #     #     retainCounter = i
-    #     #     deleteCounter = j
-    #     currentNode = currentNode.next
-    #     counter += 1
-    #     print("Retain Counter: {}; Delete Counter: {}; Current Node: {}".format(iCounter, jCounter, currentNode.data))
-    #     print("New Linked List:")
-    #     print_linked_list(newHead)
-    #     if counter == 5:
-    #         break
-        
-        
+    while currentNode.next:
+        for iCounter in range(i, 0, -1):
+            # print("Inside iCounter, step #{}".format(iCounter))
+            if currentNode.next == None:
+                print("Inside iCounter break")
+                return newHead
+            prevNode = currentNode
+            currentNode = currentNode.next
+        # if currentNode.next == None:
+        #     return newHead
+        # else:
+        #     currentNode = prevNode
+        print("After iCounter | Previous Node: {}; Current Node: {}".format(prevNode.data, currentNode.data))
+
+        for jCounter in range(j, 0, -1):
+            # print("Inside jCounter, step #{}".format(jCounter))
+            currentNode = prevNode
+            if currentNode.next.next == None:
+                currentNode.next = None
+                print("Inside jCounter break")
+                return newHead
+            currentNode.next = currentNode.next.next
+        currentNode = currentNode.next
+        print("After jCounter | Previous Node: {}; Current Node: {}".format(prevNode.data, currentNode.data))
+        # break
+    
+    print("Outside the While Loop")
+    return newHead
 
 # helper functions for testing purpose
 def create_linked_list(arr):
@@ -82,6 +78,7 @@ def test_function(test_case):
     solution = test_case[3]
         
     temp = skip_i_delete_j(head, i, j)
+    print("New Linked List:")
     print_linked_list(temp)
     index = 0
     try:
@@ -95,28 +92,32 @@ def test_function(test_case):
     except Exception as e:
         print("Fail")
 
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-i = 2
-j = 2
-head = create_linked_list(arr)
-solution = [1, 2, 5, 6, 9, 10]
-test_case = [head, i, j, solution]
-test_function(test_case)
+# arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+# # arr = [1, 2, 3, 4, 5, 6, 7]
+# i = 2
+# j = 2
+# head = create_linked_list(arr)
+# print_linked_list(skip_i_delete_j(head, i, j))
+# solution = [1, 2, 5, 6, 9, 10]
+# test_case = [head, i, j, solution]
+# test_function(test_case)
 # print_linked_list(test_case)
 
 # arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 # i = 2
 # j = 3
 # head = create_linked_list(arr)
+# print_linked_list(skip_i_delete_j(head, i, j))
 # solution = [1, 2, 6, 7, 11, 12]
 # test_case = [head, i, j, solution]
 # test_function(test_case)
 # # print_linked_list(test_case)
 
-# arr = [1, 2, 3, 4, 5]
-# i = 2
-# j = 4
-# head = create_linked_list(arr)
+arr = [1, 2, 3, 4, 5]
+i = 2
+j = 4
+head = create_linked_list(arr)
+print_linked_list(skip_i_delete_j(head, i, j))
 # solution = [1, 2]
 # test_case = [head, i, j, solution]
 # test_function(test_case)
