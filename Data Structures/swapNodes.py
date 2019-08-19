@@ -27,6 +27,17 @@ def swap_nodes(head, left_index, right_index):
     TODO: complete this function and swap nodes present at left_index and right_index
     Do not create a new linked list
     """
+    if right_index <= left_index:
+        print("Input Error")
+        return head
+    
+    currentNode = head
+    leftIndex = 0
+    
+    for rightIndex in range(right_index, 0, -1):
+        leftIndex += 0
+        currentNode = currentNode.next
+
     pass
 
 def test_function(test_case):
