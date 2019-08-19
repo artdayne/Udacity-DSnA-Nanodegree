@@ -30,29 +30,31 @@ def skip_i_delete_j(head, i, j):
     jCounter = 0
     # counter = 0
     
+    
+
     # retainCounter -= 1
     # currentNode = currentNode.next
-    print("BEFORE WHILE LOOP: Retain Counter: {}; Delete Counter: {}; Current Node: {}".format(retainCounter, deleteCounter, currentNode.data))
-    print("BEFORE WHILE LOOP: NEW LINKED LIST")
-    print_linked_list(newHead)
-    while currentNode.next:
+    # print("BEFORE WHILE LOOP: Retain Counter: {}; Delete Counter: {}; Current Node: {}".format(iCounter, jCounter, currentNode.data))
+    # print("BEFORE WHILE LOOP: NEW LINKED LIST")
+    # print_linked_list(newHead)
+    # while currentNode.next:
         
-        # if retainCounter > 0:
-        #     newListNode.next = Node(currentNode.data)
-        #     newListNode = newListNode.next
-        #     retainCounter -= 1
-        # elif deleteCounter > 0:
-        #     deleteCounter -= 1
-        # else:
-        #     retainCounter = i
-        #     deleteCounter = j
-        currentNode = currentNode.next
-        counter += 1
-        print("Retain Counter: {}; Delete Counter: {}; Current Node: {}".format(retainCounter, deleteCounter, currentNode.data))
-        print("New Linked List:")
-        print_linked_list(newHead)
-        if counter == 5:
-            break
+    #     # if retainCounter > 0:
+    #     #     newListNode.next = Node(currentNode.data)
+    #     #     newListNode = newListNode.next
+    #     #     retainCounter -= 1
+    #     # elif deleteCounter > 0:
+    #     #     deleteCounter -= 1
+    #     # else:
+    #     #     retainCounter = i
+    #     #     deleteCounter = j
+    #     currentNode = currentNode.next
+    #     counter += 1
+    #     print("Retain Counter: {}; Delete Counter: {}; Current Node: {}".format(iCounter, jCounter, currentNode.data))
+    #     print("New Linked List:")
+    #     print_linked_list(newHead)
+    #     if counter == 5:
+    #         break
         
         
 
