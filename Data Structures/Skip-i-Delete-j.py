@@ -22,13 +22,13 @@ def skip_i_delete_j(head, i, j):
     return - return the updated head of the linked list
     """
     newHead = Node(head.data)
-    newListNode = newHead
+    # newListNode = newHead
     currentNode = head
     # newListNode.next = Node(currentNode.next.data)
     # print_linked_list(newHead)
-    retainCounter = 0
-    deleteCounter = 0
-    counter = 0
+    iCounter = 0
+    jCounter = 0
+    # counter = 0
     
     # retainCounter -= 1
     # currentNode = currentNode.next
